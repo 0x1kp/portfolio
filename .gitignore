@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.out/
+dist/
+.vercel/
+.pnpm-store/
+.env*
+.DS_Store
+coverage/

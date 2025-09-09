@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens (clean-room) */
+:root {
+  --background: 210 11.1% 3.53%;   /* near-black */
+  --foreground: 0 0% 98%;
+  --card: 210 11.1% 5.5%;
+  --card-foreground: 0 0% 98%;
+  --popover: 210 11.1% 5.5%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+
+  --radius: 0.75rem;
+
+  --dock-glow: 255 255 255;
+}
+
+html { color-scheme: dark; }
+* { border-color: hsl(var(--border)); }
+body { background: hsl(var(--background)); color: hsl(var(--foreground)); }
+
+/* Dock interactions */
+.dock { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.dock-btn {
+  width: 2.25rem; height: 2.25rem;
+  border-radius: 9999px;
+  transition: transform 160ms cubic-bezier(.2,.8,.2,1),
+              background-color 140ms ease,
+              box-shadow 180ms ease,
+              filter 180ms ease;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
+}
+.dock-btn:hover {
+  transform: scale(1.1);
+  background-color: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 30px rgba(var(--dock-glow),0.16);
+  filter: brightness(1.06);
+}
+.dock-label {
+  max-width: 0; opacity: 0; transform: translateX(-4px);
+  transition: max-width 180ms cubic-bezier(.2,.8,.2,1),
+              opacity 140ms ease,
+              transform 180ms cubic-bezier(.2,.8,.2,1);
+  overflow: hidden; white-space: nowrap;
+}
+.dock-item:hover .dock-label { max-width: 12rem; opacity: 1; transform: translateX(0); }
