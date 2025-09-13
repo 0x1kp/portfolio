@@ -29,7 +29,7 @@ export default function HomePage() {
                 About
               </h3>
               <p>
-                I am a Security Engineer who doesn’t trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma). If it isn’t measurable (MTTD/MTTR, detection coverage), it isn’t done.
+                I am a Security Engineer who doesn’t trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
               </p>
         </div>
       </section>
@@ -41,7 +41,7 @@ export default function HomePage() {
             <SectionHeader
               pill="My Projects"
               title="Featured Projects"
-              description="I build projects from 0 to 1. Here are a few highlights."
+              description="Open source and Proprietary projects and contributions. Here are a few highlights."
             />
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -169,7 +169,7 @@ export default function HomePage() {
             src="/logos/aws.png"
             alt="Amazon Web Services"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -189,7 +189,7 @@ export default function HomePage() {
             src="/logos/tfs.png"
             alt="TFS Consulting Inc."
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -209,7 +209,7 @@ export default function HomePage() {
             src="/logos/PAI.png"
             alt="ParagraphAI"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -229,7 +229,7 @@ export default function HomePage() {
             src="/logos/PAI.png"
             alt="ParagraphAI"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -259,7 +259,7 @@ export default function HomePage() {
             src="/school/nyu.png"
             alt="NYU"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -279,7 +279,7 @@ export default function HomePage() {
             src="/school/wgu.png"
             alt="WGU"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -299,7 +299,7 @@ export default function HomePage() {
             src="/school/uoft.png"
             alt="UofT"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -323,7 +323,7 @@ export default function HomePage() {
             src="/logos/aws.png"
             alt="AWS"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -443,7 +443,7 @@ export default function HomePage() {
             src="/logos/htb.png"
             alt="HTB"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
@@ -483,7 +483,7 @@ export default function HomePage() {
             src="/logos/ccd.png"
             alt="CCD"
             fill
-            className="object-contain p-1"
+            className="object-cover"
             sizes="48px"
             priority={false}
           />
