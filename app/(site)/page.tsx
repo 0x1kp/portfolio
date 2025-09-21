@@ -505,7 +505,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <SectionHeader
             pill="Papers"
-            title="Latest Papers and Blogs"
+            title="Papers"
             description="Academic writings and thoughts on security, Cloud Infrastructure, and engineering craft."
           />
         </div>
