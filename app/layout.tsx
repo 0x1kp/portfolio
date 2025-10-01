@@ -19,20 +19,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${jakarta.variable} max-w-2xl mx-auto px-6 pb-24 font-sans antialiased`}>
-        {/* Dock first */}
         <TopDock
-          showThemeToggle={false}
+          showThemeToggle={true}
           links={{
             github: "https://github.com/0x1kp",
             linkedin: "https://www.linkedin.com/in/ukeje-u-9ab588109/",
-            x: "https://x.com/0x1kp",
+            x: "https://twitter.com/0x1kp",
+            youtube: "https://youtube.com/@0x1kp",
           }}
         />
-        {/* tiny gap only on md+ so the floating dock doesn't crowd the hero */}
-        <div className="hidden md:block h-12" aria-hidden />
-
-        {/* Then your pages (hero lives here) */}
-        {children}
+        
+        <div className="pt-20">
+          {children}
+        </div>
       </body>
     </html>
   );

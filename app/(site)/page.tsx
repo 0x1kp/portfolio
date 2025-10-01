@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col space-y-12 mt-20">
+    <main className="flex flex-col space-y-12">
       {/* Hero */}
       <section id="hero" aria-labelledby="hero-title">
         <div className="w-full space-y-8">
