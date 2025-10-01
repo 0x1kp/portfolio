@@ -25,7 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             github: "https://github.com/0x1kp",
             linkedin: "https://www.linkedin.com/in/ukeje-u-9ab588109/",
             x: "https://twitter.com/0x1kp",
-            youtube: "https://youtube.com/@0x1kp",
+            youtube: "https://youtube.com/",
           }}
         />
         
