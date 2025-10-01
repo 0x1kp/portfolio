@@ -17,7 +17,6 @@ export default function HomePage() {
               </p>
             </div>
             <span className="relative flex shrink-0 overflow-hidden rounded-full w-32 h-32 border">
-              {/* Replace src with your avatar */}
               <img className="h-full w-full object-cover" src="/EL.jpeg" alt="Profile" />
             </span>
           </div>
