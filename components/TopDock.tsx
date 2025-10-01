@@ -52,7 +52,7 @@ export function TopDock({ showThemeToggle = true, links }: Props) {
             className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12"
             aria-label="Blog"
             data-state={pathname?.startsWith("/blog") ? "open" : "closed"}
-            href="/blog"
+            href="https://0x1kp.medium.com"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-notebook size-4">
               <path d="M2 6h4"></path><path d="M2 10h4"></path><path d="M2 14h4"></path><path d="M2 18h4"></path>
