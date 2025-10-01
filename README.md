@@ -1,6 +1,4 @@
-# Next Portfolio (Clean-Room)
-
-A minimal **Next.js App Router** portfolio scaffold with **Tailwind**, **MDX**, and a top **rounded dock** that mimics the feel of pulik.dev — without copying its code.
+# Next Portfolio
 
 ## Stack
 - Next.js 14.2.32 (App Router)
