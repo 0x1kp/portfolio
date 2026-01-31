@@ -1,0 +1,30 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="300" fill="url(#bg1)"/>
+
+  <!-- Server rack icon -->
+  <rect x="200" y="60" width="100" height="140" rx="8" fill="#0f3460" stroke="#e94560" stroke-width="2"/>
+  <rect x="210" y="75" width="80" height="20" rx="3" fill="#1a1a2e"/>
+  <rect x="210" y="105" width="80" height="20" rx="3" fill="#1a1a2e"/>
+  <rect x="210" y="135" width="80" height="20" rx="3" fill="#1a1a2e"/>
+  <rect x="210" y="165" width="80" height="20" rx="3" fill="#1a1a2e"/>
+
+  <!-- LED indicators -->
+  <circle cx="220" cy="85" r="3" fill="#00ff88"/>
+  <circle cx="220" cy="115" r="3" fill="#00ff88"/>
+  <circle cx="220" cy="145" r="3" fill="#00ff88"/>
+  <circle cx="220" cy="175" r="3" fill="#ffaa00"/>
+
+  <!-- Network lines -->
+  <line x1="150" y1="130" x2="200" y2="130" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="300" y1="130" x2="350" y2="130" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Text -->
+  <text x="250" y="240" font-family="system-ui, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">Homelab Foundation</text>
+  <text x="250" y="265" font-family="system-ui, sans-serif" font-size="12" fill="#888888" text-anchor="middle">Hardware, Networking &amp; Proxmox</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="300" fill="url(#bg2)"/>
+
+  <!-- AD Domain Controller icon -->
+  <rect x="100" y="70" width="80" height="100" rx="6" fill="#0f3460" stroke="#00d4ff" stroke-width="2"/>
+  <text x="140" y="110" font-family="system-ui, sans-serif" font-size="10" fill="#00d4ff" text-anchor="middle">AD</text>
+  <text x="140" y="125" font-family="system-ui, sans-serif" font-size="8" fill="#888888" text-anchor="middle">Domain</text>
+  <text x="140" y="138" font-family="system-ui, sans-serif" font-size="8" fill="#888888" text-anchor="middle">Controller</text>
+
+  <!-- Windows Client -->
+  <rect x="210" y="70" width="80" height="100" rx="6" fill="#0f3460" stroke="#00ff88" stroke-width="2"/>
+  <rect x="225" y="90" width="50" height="35" rx="2" fill="#1a1a2e"/>
+  <rect x="240" y="130" width="20" height="5" fill="#1a1a2e"/>
+  <text x="250" y="155" font-family="system-ui, sans-serif" font-size="8" fill="#888888" text-anchor="middle">Client</text>
+
+  <!-- SIEM -->
+  <rect x="320" y="70" width="80" height="100" rx="6" fill="#0f3460" stroke="#e94560" stroke-width="2"/>
+  <text x="360" y="110" font-family="system-ui, sans-serif" font-size="10" fill="#e94560" text-anchor="middle">SIEM</text>
+  <text x="360" y="125" font-family="system-ui, sans-serif" font-size="8" fill="#888888" text-anchor="middle">Security</text>
+  <text x="360" y="138" font-family="system-ui, sans-serif" font-size="8" fill="#888888" text-anchor="middle">Monitoring</text>
+
+  <!-- Connection lines -->
+  <line x1="180" y1="120" x2="210" y2="120" stroke="#888888" stroke-width="1.5"/>
+  <line x1="290" y1="120" x2="320" y2="120" stroke="#888888" stroke-width="1.5"/>
+
+  <!-- Arrows -->
+  <polygon points="205,117 210,120 205,123" fill="#888888"/>
+  <polygon points="315,117 320,120 315,123" fill="#888888"/>
+
+  <!-- Text -->
+  <text x="250" y="210" font-family="system-ui, sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="600">Core Infrastructure</text>
+  <text x="250" y="235" font-family="system-ui, sans-serif" font-size="12" fill="#888888" text-anchor="middle">Active Directory, Clients &amp; SIEM</text>
+</svg>

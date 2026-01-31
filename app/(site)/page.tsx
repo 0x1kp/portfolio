@@ -1,7 +1,12 @@
 import SectionHeader from "@/components/SectionHeader";
+import { ProjectCard } from "@/components/ProjectCard";
+import { getFeaturedProjects } from "@/data/projects";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
+  const featuredProjects = getFeaturedProjects();
+
   return (
     <main className="flex flex-col space-y-12">
       {/* Hero */}
@@ -28,7 +33,7 @@ export default function HomePage() {
                 About
               </h3>
               <p>
-                I am a Security Engineer who doesn’t trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
+                I am a Security Engineer who doesn't trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
               </p>
         </div>
       </section>
@@ -44,89 +49,32 @@ export default function HomePage() {
             />
           </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <article className="rounded-lg bg-card flex flex-col overflow-hidden border hover:shadow transition-all">
-              <a className="block" href="https://github.com/0x1kp/CrossCloudRoleSanityChecker">
-                <img alt="Project 1" loading="lazy" width={500} height={300} className="h-40 w-full object-cover" src="/CCRSC.png" />
-              </a>
-              <div className="px-3 py-2">
-                <h3 className="font-medium mt-1 text-base">Cross-Cloud Role Sanity Checker</h3>
-                <time className="text-xs text-muted-foreground">2025 — Present</time>
-                <p className="mt-2 text-sm text-muted-foreground">Cross-Cloud Role Sanity Checker is a security-focused utility designed to validate AWS IAM roles and GCP service accounts before initiating cross-cloud data transfers — such as AWS DataSync operations targeting GCP.</p>
-              </div>
-              <div className="px-3 pb-3 mt-auto">
-                <div className="mt-2 flex flex-wrap gap-1">
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Python</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">AWS</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Bash</span>
-                </div>
-                <div className="mt-3">
-                  <a target="_blank" className="underline text-sm" href="https://github.com/0x1kp/CrossCloudRoleSanityChecker" aria-label="Open project website">Website</a>
-                </div>
-              </div>
-            </article>
-
-            <article className="rounded-lg bg-card flex flex-col overflow-hidden border hover:shadow transition-all">
-              <a className="block" href="https://example.com/project1">
-                <img alt="Project 1" loading="lazy" width={500} height={300} className="h-40 w-full object-cover" src="/SplEla.png" />
-              </a>
-              <div className="px-3 py-2">
-                <h3 className="font-medium mt-1 text-base">Log Ingestion Workflow with Splunk and Elastic</h3>
-                <time className="text-xs text-muted-foreground">2023 — Present</time>
-                <p className="mt-2 text-sm text-muted-foreground">Log ingestion, detections, attack steps, queries and dashboards following simulated attacks on Windows 10 virtual machine.</p>
-              </div>
-              <div className="px-3 pb-3 mt-auto">
-                <div className="mt-2 flex flex-wrap gap-1">
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">SPL</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Sysmon</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Kibana</span>
-                </div>
-                <div className="mt-3">
-                  <a target="_blank" className="underline text-sm" href="https://example.com/project1" aria-label="Open project website">Website</a>
-                </div>
-              </div>
-            </article>
-
-            <article className="rounded-lg bg-card flex flex-col overflow-hidden border hover:shadow transition-all">
-              <a className="block" href="https://example.com/project1">
-                <img alt="Project 1" loading="lazy" width={500} height={300} className="h-40 w-full object-cover object-top" src="/zeek.png" />
-              </a>
-              <div className="px-3 py-2">
-                <h3 className="font-medium mt-1 text-base">Threat Hunting from Malicious Traffic in PCAP</h3>
-                <time className="text-xs text-muted-foreground">2023 — Present</time>
-                <p className="mt-2 text-sm text-muted-foreground">Analyzed multiple PCAP files to identify malicious activity such as ransomware, beaconing etc. and wrote Suricata signatures to catch them.</p>
-              </div>
-              <div className="px-3 pb-3 mt-auto">
-                <div className="mt-2 flex flex-wrap gap-1">
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Zeek</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Suricata</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Wireshark</span>
-                </div>
-                <div className="mt-3">
-                  <a target="_blank" className="underline text-sm" href="https://example.com/project1" aria-label="Open project website">Website</a>
-                </div>
-              </div>
-            </article>
-
-            <article className="rounded-lg bg-card flex flex-col overflow-hidden border hover:shadow transition-all">
-              <a className="block" href="https://example.com/project2">
-                <img alt="Project 2" loading="lazy" width={500} height={300} className="h-40 w-full object-cover object-top" src="/yarasigma.png" />
-              </a>
-              <div className="px-3 py-2">
-                <h3 className="font-medium mt-1 text-base">Yara & Sigma Detection Rules Repo</h3>
-                <time className="text-xs text-muted-foreground">2023 - Present</time>
-                <p className="mt-2 text-sm text-muted-foreground">Identified multiple malware families, developed detections to successfully identify malicious files and activity within devices.</p>
-              </div>
-              <div className="px-3 pb-3 mt-auto">
-                <div className="mt-2 flex flex-wrap gap-1">
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Yara</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Sigma</span>
-                  <span className="inline-flex items-center rounded-md px-1 py-0.5 text-[10px] bg-white/10">Powershell</span>
-                </div>
-                <div className="mt-3">
-                  <a target="_blank" className="underline text-sm" href="https://example.com/project2" aria-label="Open project GitHub">GitHub</a>
-                </div>
-              </div>
-            </article>
+            {featuredProjects.map((project) => (
+              <ProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+          <div className="flex justify-center">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border hover:shadow transition-all text-sm"
+            >
+              View All Projects
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="size-4"
+              >
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
