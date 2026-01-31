@@ -1,11 +1,20 @@
 import SectionHeader from "@/components/SectionHeader";
 import { ProjectCard } from "@/components/ProjectCard";
+import { DisclosureCard } from "@/components/DisclosureCard";
+import { PaperCard } from "@/components/PaperCard";
+import { CertificationCard } from "@/components/CertificationCard";
 import { getFeaturedProjects } from "@/data/projects";
+import { getFeaturedDisclosures } from "@/data/disclosures";
+import { getFeaturedPapers } from "@/data/papers";
+import { getFeaturedCertifications } from "@/data/certifications";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HomePage() {
   const featuredProjects = getFeaturedProjects();
+  const featuredDisclosures = getFeaturedDisclosures(3);
+  const featuredPapers = getFeaturedPapers(2);
+  const featuredCertifications = getFeaturedCertifications(4);
 
   return (
     <main className="flex flex-col space-y-12">
@@ -29,18 +38,18 @@ export default function HomePage() {
         <br></br>
         <br></br>
         <div className="flex-1 space-y-2">
-              <h3 id="hero-title" className="text-2xl font-semibold tracking-tight sm:text-xl">
-                About
-              </h3>
-              <p>
-                I am a Security Engineer who doesn't trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
-              </p>
+          <h3 className="text-2xl font-semibold tracking-tight sm:text-xl">
+            About
+          </h3>
+          <p>
+            I am a Security Engineer who doesn&apos;t trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
+          </p>
         </div>
       </section>
 
       {/* Projects */}
       <section id="projects" aria-labelledby="projects-title">
-        <div className="space-y-12 w-full py-2">
+        <div className="space-y-6 w-full py-2">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <SectionHeader
               pill="My Projects"
@@ -79,7 +88,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Security Research */}
+      {/* Security Research / Disclosures */}
       <section id="security" aria-labelledby="security-title" className="space-y-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <SectionHeader
@@ -88,17 +97,34 @@ export default function HomePage() {
             description="Selected findings, write-ups, and vendor advisories."
           />
         </div>
-        <ul className="space-y-6">
-          <li>
-            <h3 className="font-medium">CVE-2025-REDACTED</h3>
-            <div className="text-xs text-muted-foreground">2025 • Reward: None • Severity: MEDIUM</div>
-            <p className="mt-1 text-sm text-muted-foreground">Unreleased writeup pending approval!</p>
-            <div className="mt-1 flex gap-3 text-sm">
-              <a className="underline" href="#">Write-up</a>
-              <a className="underline" href="#">Vendor Advisory</a>
-            </div>
-          </li>
-        </ul>
+        <div className="grid grid-cols-1 gap-3">
+          {featuredDisclosures.map((disclosure) => (
+            <DisclosureCard key={disclosure.slug} disclosure={disclosure} />
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Link
+            href="/disclosures"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border hover:shadow transition-all text-sm"
+          >
+            View All Disclosures
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </section>
 
       {/* Experience */}
@@ -112,14 +138,14 @@ export default function HomePage() {
         </div>
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/aws.png"
-            alt="Amazon Web Services"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/logos/aws.png"
+              alt="Amazon Web Services"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -132,14 +158,14 @@ export default function HomePage() {
 
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/tfs.png"
-            alt="TFS Consulting Inc."
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/logos/tfs.png"
+              alt="TFS Consulting Inc."
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -152,14 +178,14 @@ export default function HomePage() {
 
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/PAI.png"
-            alt="ParagraphAI"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/logos/PAI.png"
+              alt="ParagraphAI"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -172,14 +198,14 @@ export default function HomePage() {
 
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/PAI.png"
-            alt="ParagraphAI"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/logos/PAI.png"
+              alt="ParagraphAI"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -202,14 +228,14 @@ export default function HomePage() {
         </div>
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/school/nyu.png"
-            alt="NYU"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/school/nyu.png"
+              alt="NYU"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -222,18 +248,18 @@ export default function HomePage() {
 
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/school/wgu.png"
-            alt="WGU"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/school/wgu.png"
+              alt="WGU"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Western Governor's University</h3>
+              <h3 className="font-medium leading-none text-sm">Western Governor&apos;s University</h3>
               <div className="text-xs tabular-nums text-muted-foreground">May 2023 — Jan 2024</div>
             </div>
             <div className="text-xs">BSc. Cybersecurity</div>
@@ -242,14 +268,14 @@ export default function HomePage() {
 
         <article className="rounded-lg bg-card border p-3 flex gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/school/uoft.png"
-            alt="UofT"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
+            <Image
+              src="/school/uoft.png"
+              alt="UofT"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
@@ -259,220 +285,85 @@ export default function HomePage() {
             <div className="text-xs">HBSc. Computer Science</div>
           </div>
         </article>
-
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <h3 id="hero-title" className="text-2xl font-semibold tracking-tight sm:text-xl">Certifications</h3>
-        </div>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/aws.png"
-            alt="AWS"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Solutions Architect Associate</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2024</div>
-            </div>
-            <div className="text-xs">AWS</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/comptia.png"
-            alt="CompTIA"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">A+</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">CompTIA</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/comptia.png"
-            alt="CompTIA"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Network+</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">CompTIA</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/comptia.png"
-            alt="CompTIA"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Security+</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">CompTIA</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/comptia.png"
-            alt="CompTIA"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">CySA+</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">CompTIA</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/comptia.png"
-            alt="CompTIA"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">PenTest+</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">CompTIA</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/htb.png"
-            alt="HTB"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Certified Defensive Security Analyst (CDSA)</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2024</div>
-            </div>
-            <div className="text-xs">HackTheBox</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/isc2.png"
-            alt="ISC2"
-            fill
-            className="object-contain p-1"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">System Security Certified Practicioner (SSCP)</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2023</div>
-            </div>
-            <div className="text-xs">ISC2</div>
-          </div>
-        </article>
-
-        <article className="rounded-lg p-3 flex gap-3">
-          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
-          <Image
-            src="/logos/ccd.png"
-            alt="CCD"
-            fill
-            className="object-cover"
-            sizes="48px"
-            priority={false}
-          />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="font-medium leading-none text-sm">Certified Cyber Defender</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">2025</div>
-            </div>
-            <div className="text-xs">CyberDefenders</div>
-          </div>
-        </article>
       </section>
 
-      
+      {/* Certifications */}
+      <section id="certifications" aria-labelledby="certifications-title" className="space-y-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <SectionHeader
+            pill="Certifications"
+            title="Professional Certifications"
+            description="Industry-recognized credentials validating expertise."
+          />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {featuredCertifications.map((cert) => (
+            <CertificationCard key={cert.slug} certification={cert} compact />
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Link
+            href="/certifications"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border hover:shadow transition-all text-sm"
+          >
+            View All Certifications
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
+      </section>
 
-      {/* Posts */}
-      <section id="posts" aria-labelledby="blog-title" className="space-y-6">
+      {/* Papers */}
+      <section id="papers" aria-labelledby="papers-title" className="space-y-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <SectionHeader
             pill="Papers"
-            title="Papers"
+            title="Academic Papers"
             description="Academic writings and thoughts on security, Cloud Infrastructure, and engineering craft."
           />
         </div>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <article className="rounded-lg bg-card border p-3 flex flex-col gap-2">
-            <div className="text-xs text-muted-foreground">2025-04-30</div>
-            <h3 className="font-medium">Implementation of Machine Learning in Cloud Security Threat Hunting</h3>
-            <p className="text-sm text-muted-foreground">Practical benefits of ML algorithms when used in AWS Threat Hunting workflows.</p>
-            <a className="underline text-sm mt-auto" href="https://drive.google.com/file/d/1gsxCrC-ZzwRTszzprXz2P7KVKHVn7eJd/view?usp=share_link">Read more</a>
-          </article>
-          <article className="rounded-lg bg-card border p-3 flex flex-col gap-2">
-            <div className="text-xs text-muted-foreground">2025-04-30</div>
-            <h3 className="font-medium">Phased Migration Strategy towards Post Quantum Cryptography</h3>
-            <p className="text-sm text-muted-foreground">Practical Implementation and Benefits of Phased Migration towards PQC</p>
-            <a className="underline text-sm mt-auto" href="https://drive.google.com/file/d/1oE1nfzXUwL0FiqHnvnbNwJDkPmH03AUb/view?usp=share_link">Read more</a>
-          </article>
+        <div className="grid grid-cols-1 gap-3">
+          {featuredPapers.map((paper) => (
+            <PaperCard key={paper.slug} paper={paper} />
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <Link
+            href="/papers"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card border hover:shadow transition-all text-sm"
+          >
+            View All Papers
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="size-4"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </section>
-
-
 
       {/* Contact */}
       <section id="contact" aria-labelledby="contact-title" className="space-y-3">
@@ -482,7 +373,7 @@ export default function HomePage() {
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
             Reach out via <a className="underline" href="mailto:ukejeeee@gmail.com">email</a> or find me on
             <a className="underline ml-1" href="https://www.linkedin.com/in/ukeje-u-9ab588109/" target="_blank" rel="me noopener">LinkedIn</a>,
-            or <a className="underline ml-1" href="https://github.com/0x1kp/" target="_blank" rel="me noopener">Github</a>,
+            or <a className="underline ml-1" href="https://github.com/0x1kp/" target="_blank" rel="me noopener">Github</a>.
           </p>
         </div>
       </section>

@@ -62,6 +62,22 @@ export function TopDock({ showThemeToggle = true, links }: Props) {
           </Link>
         </div>
 
+        {/* Disclosures */}
+        <div className="flex aspect-square cursor-pointer items-center justify-center rounded-full" style={{ width: 40 }}>
+          <Link
+            className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-full size-12"
+            aria-label="Security Disclosures"
+            data-state={pathname?.startsWith("/disclosures") ? "open" : "closed"}
+            href="/disclosures"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield-alert size-4">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+              <path d="M12 8v4" />
+              <path d="M12 16h.01" />
+            </svg>
+          </Link>
+        </div>
+
         {/* Blog */}
         <div className="flex aspect-square cursor-pointer items-center justify-center rounded-full" style={{ width: 40 }}>
           <Link
