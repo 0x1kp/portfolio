@@ -47,7 +47,7 @@ export const projects: Project[] = [
     date: "2023",
     dateRange: "2023 — Present",
     tags: ["SPL", "Sysmon", "Kibana", "Splunk", "Elastic"],
-    featured: true,
+    featured: false,
     category: "detection",
     links: {
       github: "https://github.com/0x1kp",
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     date: "2023",
     dateRange: "2023 — Present",
     tags: ["Zeek", "Suricata", "Wireshark", "PCAP", "Network Analysis"],
-    featured: true,
+    featured: false,
     category: "security",
     links: {
       github: "https://github.com/0x1kp",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     date: "2023",
     dateRange: "2023 — Present",
     tags: ["YARA", "Sigma", "PowerShell", "Malware Analysis", "MITRE ATT&CK"],
-    featured: true,
+    featured: false,
     category: "detection",
     links: {
       github: "https://github.com/0x1kp",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     date: "2025",
     dateRange: "2025",
     tags: ["Proxmox", "Networking", "VLANs", "Virtualization", "Homelab"],
-    featured: false,
+    featured: true,
     category: "homelab",
     links: {
       medium:
@@ -118,13 +118,33 @@ export const projects: Project[] = [
     date: "2025",
     dateRange: "2025",
     tags: ["Active Directory", "Windows Server", "SIEM", "Group Policy", "Logging"],
-    featured: false,
+    featured: true,
     category: "homelab",
     links: {
       medium:
         "https://0x1kp.medium.com/part-2-core-infrastructure-active-directory-clients-and-siem-d8bb05777c1f",
     },
   },
+
+    // Cloud lab Series (links to Github)
+    {
+      slug: "cloud-lab-aws-iam-backdoor",
+      title: "Case Writeup: AWS IAM Role Backdoor via Stratus Red Team",
+      description:
+        "Investigation of a AWS IAM Role Backdoor via Stratus Red Team.",
+      longDescription:
+        "Investigation of a AWS IAM Role Backdoor via Stratus Red Team. An IAM user (Blast-User) in the Shared-Services AWS account (950941369133) was used to establish persistence by backdooring an IAM role's trust policy.",
+      image: "/homelab-foundation.svg",
+      date: "2026",
+      dateRange: "2026 - Present",
+      tags: ["AWS", "IAM", "Backdoor", "Cloud Lab"],
+      featured: true,
+      category: "cloud",
+      links: {
+        github:
+          "https://github.com/0x1kp/cloud-lab/blob/main/Cases/AWS-IAM-Backdoor/01-Case-Writeup.md",
+      },
+    }
 ];
 
 // Helper functions
