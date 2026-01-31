@@ -1,5 +1,3 @@
-# David Ukeje - Portfolio Site
-
 A modern, responsive portfolio website for showcasing security engineering projects, CVE disclosures, certifications, and academic research.
 
 **Live:** [https://0x1kp.xyz](https://0x1kp.xyz)
