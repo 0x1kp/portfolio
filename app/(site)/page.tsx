@@ -150,7 +150,27 @@ export default function HomePage() {
           <div className="flex-1">
             <div className="flex items-center justify-between gap-2">
               <h3 className="font-medium leading-none text-sm">Amazon Web Services</h3>
-              <div className="text-xs tabular-nums text-muted-foreground">May 2024 — Present</div>
+              <div className="text-xs tabular-nums text-muted-foreground">April 2026 — Present</div>
+            </div>
+            <div className="text-xs">Security Engineer</div>
+          </div>
+        </article>
+
+        <article className="rounded-lg bg-card border p-3 flex gap-3">
+          <div className="relative w-12 h-12 overflow-hidden rounded-full border bg-white">
+            <Image
+              src="/logos/aws.png"
+              alt="Amazon Web Services"
+              fill
+              className="object-cover"
+              sizes="48px"
+              priority={false}
+            />
+          </div>
+          <div className="flex-1">
+            <div className="flex items-center justify-between gap-2">
+              <h3 className="font-medium leading-none text-sm">Amazon Web Services</h3>
+              <div className="text-xs tabular-nums text-muted-foreground">May 2024 — April 2026</div>
             </div>
             <div className="text-xs">Cloud Engineer</div>
           </div>
