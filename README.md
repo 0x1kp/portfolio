@@ -395,13 +395,13 @@ import '@/styles/globals.css'
 
 ## License
 
-All rights reserved. © 2025 David Ukeje
+All rights reserved. © 2026 David Ukeje
 
 ---
 
 ## Contact
 
-- **Email:** ukejeeee@gmail.com
-- **LinkedIn:** [linkedin.com/in/ukeje-u-9ab588109](https://www.linkedin.com/in/ukeje-u-9ab588109/)
+- **Email:** david@ukeje.me
+- **LinkedIn:** [linkedin.com/in/david-ukeje](https://www.linkedin.com/in/david-ukeje/)
 - **GitHub:** [github.com/0x1kp](https://github.com/0x1kp)
 - **Twitter/X:** [@0x1kp](https://twitter.com/0x1kp)
