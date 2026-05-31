@@ -12,7 +12,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "My Portfolio",
   description:
-    "Security Analyst & Engineer — projects, blog, experience, and contact information.",
+    "Security Engineer — projects, blog, experience, and contact information.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           showThemeToggle={true}
           links={{
             github: "https://github.com/0x1kp",
-            linkedin: "https://www.linkedin.com/in/ukeje-u-9ab588109/",
+            linkedin: "https://www.linkedin.com/in/david-ukeje",
             x: "https://twitter.com/0x1kp",
             youtube: "https://youtube.com/",
           }}

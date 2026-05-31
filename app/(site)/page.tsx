@@ -27,7 +27,7 @@ export default function HomePage() {
                 Hi, I&apos;m David 👋
               </h1>
               <p className="max-w-[600px] md:text-xl text-muted-foreground">
-                Security Analyst &amp; Engineer focusing on Incident Response and Cloud Security.
+                Security Engineer currently working for AWS as a CloudSec Incident Response Engineer.
               </p>
             </div>
             <span className="relative flex shrink-0 overflow-hidden rounded-full w-32 h-32 border">
@@ -42,7 +42,7 @@ export default function HomePage() {
             About
           </h3>
           <p>
-            I am a Security Engineer who doesn&apos;t trust assumptions. I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My work spans AWS/GCP IAM sanity checks, log pipelines (Splunk + Elastic), PCAP threat hunting with Zeek/Suricata, and rule engineering (YARA/Sigma).
+            I build and break systems, then automate the guardrails: detections, incident response, and secure cloud architectures. My current role spans IAM sanity checks, log pipelines (GuardDuty, 3P SecurityHub Integrations, Logs from S3, SSM, R53, VPC, ELB, CloudTrail etc), PCAP threat hunting, and rule engineering..
           </p>
         </div>
       </section>
@@ -242,7 +242,7 @@ export default function HomePage() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <SectionHeader
             pill="Education"
-            title="What I Studied"
+            title="What I've Studied"
             description="Degrees and programs that shaped my technical foundation."
           />
         </div>
@@ -391,8 +391,8 @@ export default function HomePage() {
           <div className="inline-block rounded-lg px-3 py-1 text-sm bg-white/10">Contact</div>
           <h2 id="contact-title" className="text-3xl font-semibold tracking-tight sm:text-5xl">Get in Touch</h2>
           <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
-            Reach out via <a className="underline" href="mailto:ukejeeee@gmail.com">email</a> or find me on
-            <a className="underline ml-1" href="https://www.linkedin.com/in/ukeje-u-9ab588109/" target="_blank" rel="me noopener">LinkedIn</a>,
+            Reach out via <a className="underline" href="mailto:david@ukeje.me">email</a> or find me on
+            <a className="underline ml-1" href="https://www.linkedin.com/in/david-ukeje" target="_blank" rel="me noopener">LinkedIn</a>,
             or <a className="underline ml-1" href="https://github.com/0x1kp/" target="_blank" rel="me noopener">Github</a>.
           </p>
         </div>
